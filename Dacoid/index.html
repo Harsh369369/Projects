@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+
+</head>
+
+<body class="bg-gray-100">
+    <div id="app" class="h-screen max-w-md mx-auto bg-white">
+        <div id="page1" class="page flex flex-col items-center justify-center px-4 relative h-screen">
+            <p class="absolute top-0 right-0 mt-4 mr-4 underline text-blue-400 cursor-pointer"
+                onclick="showLoginPage()">Skip</p>
+            <img src="./assets/home.png" alt="Track Your Goal" class="w-64 mb-8">
+            <h1 class="text-3xl font-bold mb-4 text-left w-full">Track Your Goal</h1>
+            <p class="text-gray-600 mb-8 text-left">Don't worry if you have trouble determining your goals. We can help
+                you determine your goals and track your goals.</p>
+            <div class="absolute bottom-0 right-0 mb-4 mr-4 bg-white border-solid border-2 border-t-blue-500 rounded-full w-16 h-16 flex justify-center items-center cursor-pointer"
+                onclick="showPage2()">
+                <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-200 to-blue-500 flex justify-center items-center">
+                    <img src="./assets/chevron-right.png" alt="" class="z-20">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="page2" class="page flex-col items-center justify-center px-4 relative h-screen">
+            <p class="absolute top-0 right-0 mt-4 mr-4 underline text-blue-400 cursor-pointer"
+                onclick="showLoginPage()">Skip</p>
+            <img src="./assets/cycle.png" alt="Get Burn" class="w-64 mb-8">
+            <h1 class="text-3xl font-bold mb-4 w-full text-left">Get Burn</h1>
+            <p class="text-gray-600 mb-8 text-left">Let's keep burning to achieve your goals, it hurts only temporarily.
+                If you give up now, you will be in pain forever.</p>
+            <div class="absolute bottom-0 right-0 mb-4 mr-4 bg-white border-solid border-2 border-t-blue-500 rounded-full w-16 h-16 flex justify-center items-center cursor-pointer"
+                onclick="showLoginPage()">
+                <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-200 to-blue-500 flex justify-center items-center">
+                    <img src="./assets/chevron-right.png" alt="" class="z-20">
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

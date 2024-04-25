@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gray-100">
+    <div id="app" class="h-screen max-w-md mx-auto bg-white">
+        <div id="page4" class="min-h-fit bg-white top-0 flex-col items-center justify-center p-4 flex relative">
+            <div class="w-full h-fit flex items-center mb-4 top-0 absolute bg-white p-2">
+                <img class="w-5 h-5" src="./assets/chevron-left.png" alt="back" onclick="showPage3()">
+                <h1 class="text-2xl font-bold m-auto">Workout Tracker</h1>
+            </div>
+            <div class="mt-8 mb-2">
+                <img src="./assets/Chart.png" width="400" height="200" class="mt-2">
+                <div class="text-gray-600 
+            flex items-center mt-4 w-full p-2 bg-gray-300 bg-gradient-to-r from-gray-100 to-white rounded-md">
+                    <img class="w-4 h-4" src="./assets/alert-triangle.png" alt="alert icon">
+                    <p class="ml-2 my-0 text-base font-normal">
+                        You've burned fewer calories than <br> yesterday, time to get moving!
+                    </p>
+                </div>
+            </div>
+            <div class="mb-8 flex flex-col w-full">
+                <h2 class="text-xl font-semibold mb-2">Upcoming Workouts</h2>
+                <label class="inline-flex items-center justify-between w-full bg-white mb-6 p-2 rounded-xl shadow-lg">
+                    <div class="flex items-center">
+                        <img src="./assets/Ellipse 53.png" alt="full workout">
+                        <div class="flex flex-col ml-3 justify-center">
+                            <span class="text-gray-700 mb-2 font-bold">Full Body Workout</span>
+                            <p class="text-xs font-semibold text-gray-400">Today 3pm</p>
+                        </div>
+                    </div>
+
+                    <label for="toggle1" class="flex items-center cursor-pointer">
+                        <div class="relative">
+                            <input id="toggle1" type="checkbox" class="sr-only" />
+                            <div class="tbox1 w-10 h-6 bg-gray-400 rounded-full shadow-inner"></div>
+                            <div class="dot1 absolute w-5 h-5 m-0.5 bg-white rounded-full shadow inset-y-0 left-0">
+                            </div>
+                        </div>
+                    </label>
+                </label>
+                <label class="inline-flex items-centerw w-full justify-between bg-white rounded-xl shadow-lg p-3">
+                    <div class="flex items-center">
+                        <img src="./assets/Ellipse 54.png" alt="upper workout">
+                        <div class="flex flex-col ml-3 justify-center">
+                            <span class="text-gray-700 mb-2 font-bold">Upper Body Workout</span>
+                            <p class="text-xs font-semibold text-gray-400">Today 10pm</p>
+                        </div>
+                    </div>
+                    <label for="toggle2" class="flex items-center cursor-pointer">
+                        <div class="relative">
+                            <input id="toggle2" type="checkbox" class="sr-only" />
+                            <div class="tbox2 w-10 h-6 bg-gray-400 rounded-full shadow-inner"></div>
+                            <div class="dot2 absolute w-5 h-5 m-0.5 bg-white rounded-full shadow inset-y-0 left-0">
+                            </div>
+                        </div>
+                    </label>
+                </label>
+            </div>
+            <h2 class="text-xl font-bold mb-6 w-full text-left">What Do You Want to Train?</h2>
+            <div class="mb-8 w-full rounded-xl bg-blue-500 flex justify-between p-4">
+                <div class="flex flex-col items-start justify-center">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-black font-bold px-4 rounded mr-4">Full Body
+                        Workout</button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-black font-bold px-4 rounded">Arms</button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-black font-bold px-4 rounded">Chest</button>
+
+                </div>
+                <img src="./assets/Ellipse 55.png" alt="">
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-16"
+                onclick="showPage5()">View Schedule</button>
+
+            <nav class="fixed bottom-0 w-full max-w-md z-50 bg-white flex justify-between py-4 px-6">
+                <button class="text-white"><img src="./assets/home1.png" alt=""></button>
+                <button class="text-white"><img src="./assets/progress.png" alt=""></button>
+                <button class="bg-blue-400 rounded-full h-16 w-16 flex items-center justify-center relative z-10"
+                    style="margin-top: -30px;">
+                    <img src="./assets/search.png" alt="">
+                    <button class="text-white"><img src="./assets/camera.png" alt=""></button>
+                    <button class="text-white"><img src="./assets/user.png" alt=""></button>
+                </button>
+            </nav>
+        </div>
+    </div>
+    <script>
+        const toggleSwitch = document.getElementById('toggle1');
+        toggleSwitch.addEventListener('change', function () {
+            const dot = document.querySelector('.dot1');
+            const tbox = document.querySelector('.tbox1');
+            if (toggleSwitch.checked) {
+                dot.classList.remove('left-0');
+                dot.classList.add('right-0');
+                tbox.classList.remove('bg-gray-400');
+                tbox.classList.add('bg-blue-400');
+
+            } else {
+                dot.classList.remove('right-0');
+                dot.classList.add('left-0');
+                tbox.classList.remove('bg-blue-400');
+                tbox.classList.add('bg-gray-400');
+            }
+        });
+
+        const toggleSwitch2 = document.getElementById('toggle2');
+        toggleSwitch2.addEventListener('change', function () {
+            const dot2 = document.querySelector('.dot2');
+            const tbox2 = document.querySelector('.tbox2');
+            if (toggleSwitch2.checked) {
+                dot2.classList.remove('left-0');
+                dot2.classList.add('right-0');
+                tbox2.classList.add('bg-blue-400');
+                tbox2.classList.remove('bg-gray-400');
+            } else {
+                dot2.classList.remove('right-0');
+                dot2.classList.add('left-0');
+                tbox2.classList.remove('bg-blue-400');
+                tbox2.classList.add('bg-gray-400');
+            }
+        });
+    </script>
+</body>
+
+</html>
